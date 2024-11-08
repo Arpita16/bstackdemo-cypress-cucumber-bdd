@@ -67,53 +67,61 @@ Cypress (this project is configured to use Cypress)
 # Installation
 
 ## Clone the repository
-git clone https://github.com/Arpita16/bstackdemo-cypress-cucumber-bdd.git
+          git clone https://github.com/Arpita16/bstackdemo-cypress-cucumber-bdd.git
 
 ## Navigate to the project directory
-cd bstackdemo-cypress-cucumber-bdd
+           cd bstackdemo-cypress-cucumber-bdd
 
 ## Install dependency
 
-Install Node.js-Visit the official Node.js website: https://nodejs.org.(if not installed in the system)
+1.Install Node.js-Visit the official Node.js website: 
 
-Install npm latest version:npm install -g npm@latest(if not installed in the system already)
+        https://nodejs.org.(if not installed in the system)
 
-IDE application(Visual Studio Code recommended)
+2.Install npm latest version:
+
+          npm install -g npm@latest(if not installed in the system already)
+
+3.IDE application(Visual Studio Code recommended)
 
 ## Check Version
 
-node -v
+            node -v
 
-npm -v
+            npm -v
+            
 ## Install Cypress
 
-npm init -y
+           npm init -y
 
-npm install --save-dev cypress
+           npm install --save-dev cypress
+
+## Indtall Cucumber
+           npm install –save-dev cypress-cucumber-preprocessor
+
+## Update cypress.config.js 
+
+    const { defineConfig } = require("cypress");
+          const cucumber = require("cypress-cucumber-preprocessor").default;
+              module.exports = defineConfig({
+                      e2e: {
+                               specPattern: "**/*.feature",
+                               setupNodeEvents(on, config) {
+                                         on("file:preprocessor", cucumber());
+                                       },
+                             },
+                });
+
+## Update package.json
+
+        "cypress-cucumber-preprocessor": {
+                         "nonGlobalStepDefinitions": false,
+                         "step_definitions": "cypress/e2e/Tests"
+               }
 
 
-**Run Cypress Tests in GUI mode:**
 
-npx cypress open->E2E Testing->Start E2E Testing in Chrome->Specs->Double click on the Specs to run one by one 
+**Run Cypress Tests .feature file in GUI mode:**
 
-# Configuration
-
-**Cypress configuration in cypress.json**
-
-    module.exports = defineConfig({
-
-         watchForFileChanges:false,// prevent cypress from automatically re-running tests whenever it detects a file change
-  
-      e2e: {
-    
-                setupNodeEvents(on, config) {
-       
-                           // implement node event listeners here
-  
-               },
-  
-         },
-  
-    });
-
+            npx cypress open->E2E Testing->Start E2E Testing in Chrome->Specs->Double click on the .feature file Specs to run one by one 
 
