@@ -86,32 +86,34 @@ node -v
 
 npm -v
 ## Install Cypress
+
 npm init -y
 
 npm install --save-dev cypress
 
 
-Run Cypress Tests in GUI mode:
+**Run Cypress Tests in GUI mode:**
+
 npx cypress open->E2E Testing->Start E2E Testing in Chrome->Specs->Double click on the Specs to run one by one 
 
 # Configuration
 
 **Cypress configuration in cypress.json**
 
-  module.exports = defineConfig({
+    module.exports = defineConfig({
 
-  watchForFileChanges:false,// prevent cypress from automatically re-running tests whenever it detects a file change
+         watchForFileChanges:false,// prevent cypress from automatically re-running tests whenever it detects a file change
   
-  e2e: {
+      e2e: {
     
-    setupNodeEvents(on, config) {
+                setupNodeEvents(on, config) {
        
-       // implement node event listeners here
+                           // implement node event listeners here
   
                },
   
          },
   
-  });
+    });
 
 
