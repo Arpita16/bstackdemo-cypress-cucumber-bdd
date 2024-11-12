@@ -1,7 +1,7 @@
-// <reference types="cypress" />
+
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
  
-import checkout from "../../Pages/TestGridLoginPage/TestGridCheckout.cy";
+import checkout from "../../Pages/BStackLoginPage/BStackCheckout.cy";
 
 When ("I clicked on ADD to Cart button",()=>{
     checkout.clickAddtoCart();
