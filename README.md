@@ -4,6 +4,8 @@
 
 This project is a test automation suite built using Cypress and JavaScript with Cucumber for behavior-driven development (BDD). It leverages Gherkin syntax for defining human-readable test scenarios, making it accessible for both technical and non-technical team members.
 
+[![BStackDemoApp-Cypress-Cucumber-BDD](https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/detailed/dk15yx&style=flat&logo=cypress)](https://cloud.cypress.io/projects/dk15yx/runs)
+
 # Key Components
 
 Cypress: A JavaScript-based end-to-end testing framework, known for its ease of use and real-time reloading. Cypress enables fast, reliable tests and debugging for web applications.
