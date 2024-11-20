@@ -2,6 +2,9 @@ name: Cypress Tests with Dependency and Artifact Caching
 
 on: push
 
+
+
+
 jobs:
   install:
     runs-on: ubuntu-22.04
@@ -11,10 +14,14 @@ jobs:
 
       - name: Cypress install
         uses: cypress-io/github-action@v6
+
         with:
-          # Disable running of tests within install job
-          runTests: false
-          build: npm run build
+            build: npm run build
+            start: npm start
+            runTests: false
+            browser: chrome
+
+        
 
       - name: Save build folder
         uses: actions/upload-artifact@v4
